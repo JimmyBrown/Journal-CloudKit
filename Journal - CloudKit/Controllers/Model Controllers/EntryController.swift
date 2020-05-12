@@ -15,7 +15,7 @@ class EntryController {
     
     static let sharedInstance = EntryController()
     
-    let publicDB = CKContainer.default().privateCloudDatabase
+    let privateDB = CKContainer.default().privateCloudDatabase
     
     func createEntry(with title: String, body: String, completion: @escaping(_ result: Result<Entry?, EntryError>) -> Void ) {
         let newEntry = Entry(title: title, body: body)
@@ -27,10 +27,9 @@ class EntryController {
         
         let entryRecord = CKRecord(entry: entry)
         
-        publicDB.save(entryRecord) { (record, error) in
+        privateDB.save(entryRecord) { (record, error) in
             if let error = error {
-                completion(.failure(.ckError(error)))
-                return
+                return completion(.failure(.ckError(error)))
             }
             guard let record = record,
                 let savedEntry = Entry(ckRecord: record)
@@ -46,7 +45,7 @@ class EntryController {
         let fetchAllEntries = NSPredicate(value: true)
         let query = CKQuery(recordType: EntryConstants.recordTypeKey, predicate: fetchAllEntries)
         
-        publicDB.perform(query, inZoneWith: nil) { (records, error) in
+        privateDB.perform(query, inZoneWith: nil) { (records, error) in
             if let error = error {
                 completion(.failure(.ckError(error)))
             }
