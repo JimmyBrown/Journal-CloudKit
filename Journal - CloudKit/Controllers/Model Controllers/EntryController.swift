@@ -9,11 +9,11 @@
 import Foundation
 import CloudKit
 
-
-
 class EntryController {
     
     var entries: [Entry] = []
+    
+    static let sharedInstance = EntryController()
     
     let publicDB = CKContainer.default().privateCloudDatabase
     
@@ -43,6 +43,20 @@ class EntryController {
     
     func fetchEntriesWith(completion: @escaping(_ result: Result<[Entry]?,EntryError>) -> Void) {
         
+        let fetchAllEntries = NSPredicate(value: true)
+        let query = CKQuery(recordType: EntryConstants.recordTypeKey, predicate: fetchAllEntries)
+        
+        publicDB.perform(query, inZoneWith: nil) { (records, error) in
+            if let error = error {
+                completion(.failure(.ckError(error)))
+            }
+            
+            guard let records = records else { return completion(.failure(.couldNotUnwrap)) }
+            print("fetched all entries successfully")
+            
+            let entries = records.compactMap({ Entry(ckRecord: $0) })
+            completion(.success(entries))
+        }
     }
     
     

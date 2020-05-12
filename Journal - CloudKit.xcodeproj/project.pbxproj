@@ -16,6 +16,9 @@
 		BFC7F5EE2469EA20008D1AA1 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F5ED2469EA20008D1AA1 /* Entry.swift */; };
 		BFC7F5F02469F0DF008D1AA1 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F5EF2469F0DF008D1AA1 /* EntryController.swift */; };
 		BFC7F5F32469F33F008D1AA1 /* EntryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F5F22469F33F008D1AA1 /* EntryError.swift */; };
+		BFC7F5F5246A06BE008D1AA1 /* EntryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F5F4246A06BE008D1AA1 /* EntryListTableViewController.swift */; };
+		BFC7F5F7246A0A34008D1AA1 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F5F6246A0A34008D1AA1 /* DateExtension.swift */; };
+		BFC7F5F9246A0EC8008D1AA1 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7F5F8246A0EC8008D1AA1 /* EntryDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		BFC7F5ED2469EA20008D1AA1 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		BFC7F5EF2469F0DF008D1AA1 /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
 		BFC7F5F22469F33F008D1AA1 /* EntryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryError.swift; sourceTree = "<group>"; };
+		BFC7F5F4246A06BE008D1AA1 /* EntryListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListTableViewController.swift; sourceTree = "<group>"; };
+		BFC7F5F6246A0A34008D1AA1 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		BFC7F5F8246A0EC8008D1AA1 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,7 @@
 		BFC7F5E92469E9CC008D1AA1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BFC7F5D52469E824008D1AA1 /* Main.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -122,7 +129,8 @@
 		BFC7F5EB2469E9D9008D1AA1 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BFC7F5D52469E824008D1AA1 /* Main.storyboard */,
+				BFC7F5F4246A06BE008D1AA1 /* EntryListTableViewController.swift */,
+				BFC7F5F8246A0EC8008D1AA1 /* EntryDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -139,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				BFC7F5F22469F33F008D1AA1 /* EntryError.swift */,
+				BFC7F5F6246A0A34008D1AA1 /* DateExtension.swift */,
 			);
 			path = "Helpers + Extensions";
 			sourceTree = "<group>";
@@ -215,9 +224,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFC7F5EE2469EA20008D1AA1 /* Entry.swift in Sources */,
+				BFC7F5F7246A0A34008D1AA1 /* DateExtension.swift in Sources */,
 				BFC7F5F32469F33F008D1AA1 /* EntryError.swift in Sources */,
+				BFC7F5F5246A06BE008D1AA1 /* EntryListTableViewController.swift in Sources */,
 				BFC7F5D02469E824008D1AA1 /* AppDelegate.swift in Sources */,
 				BFC7F5F02469F0DF008D1AA1 /* EntryController.swift in Sources */,
+				BFC7F5F9246A0EC8008D1AA1 /* EntryDetailViewController.swift in Sources */,
 				BFC7F5D22469E824008D1AA1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
